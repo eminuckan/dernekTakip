@@ -18,6 +18,7 @@ namespace Dernek.DAL.Repositories
 
         public async Task<bool> AddAsync(T entity)
         {
+
             EntityEntry<T> entityEntry = await Table.AddAsync(entity);
             return entityEntry.State == EntityState.Added;
         }

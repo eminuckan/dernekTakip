@@ -191,7 +191,7 @@
             container.Dock = DockStyle.Fill;
             container.Location = new Point(202, 0);
             container.Name = "container";
-            container.Size = new Size(1127, 618);
+            container.Size = new Size(1163, 618);
             container.TabIndex = 3;
             // 
             // Main
@@ -199,7 +199,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1329, 618);
+            ClientSize = new Size(1365, 618);
             Controls.Add(container);
             Controls.Add(flowLayoutPanel1);
             Name = "Main";

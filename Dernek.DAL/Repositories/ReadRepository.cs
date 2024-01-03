@@ -37,9 +37,7 @@ namespace Dernek.DAL.Repositories
         }
 
         public async Task<T> GetByIdAsync( string id , bool tracking = true )
-        {  // GetById gibi generic yapılanmalarda değersel çalışacaksak o değeri temsil eden bir arayüz veya sınıf tasarlamamız gerekiyor. Çünkü T sınıfı generic bir sınıf. Biz burada önceden yaptığımız BaseEntity sınıfını kullanacağız. Bunun yerine bir Interface yazıp onu da kullanabilirdik. Bu yönteme Marker Pattern adı veriliyor. İkinci bir yöntem ise kullandığımız ORM Ef Core için olan FindAsync metoduna direkt id vererek bulmak olacak.
-           //=> await Table.FirstOrDefaultAsync( e => e.Id == Guid.Parse(id) ); Marker Pattern
-
+        {  
             var query = Table.AsQueryable();
             if ( !tracking )
             {
@@ -60,6 +58,17 @@ namespace Dernek.DAL.Repositories
             }
 
             return await query.FirstOrDefaultAsync( method );
+        }
+
+        public bool Any(string id, bool tracking = true)
+        {
+            var query = Table.AsQueryable();
+            if (!tracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return query.Any(e => e.Id == id);
         }
     }
 }
