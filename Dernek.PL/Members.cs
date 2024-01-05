@@ -11,6 +11,7 @@ using System.Data;
 using System.Data.Common;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -36,6 +37,26 @@ namespace Dernek.PL
         private void LoadData()
         {
             var members = _memberReadRepository.GetAll();
+
+            if (cityFilter.SelectedIndex > 0)
+            {
+                City selectedCity = (City)Enum.Parse(typeof(City), cityFilter.Text);
+                members = members.Where(m => m.City == selectedCity);
+
+            }
+            if (bloodTypeFilter.SelectedIndex > 0)
+            {
+                BloodType selectedBloodType = (BloodType)Enum.Parse(typeof(BloodType), bloodTypeFilter.Text);
+                members = members.Where(m => m.BloodType == selectedBloodType);
+            }
+            if (isActiveFilter.SelectedIndex > 0)
+            {
+                int isActiveIndex = isActiveFilter.SelectedIndex;
+                bool isActive = isActiveIndex == 1 ? true : false;
+                members = members.Where(m => m.IsActive == isActive);
+            }
+
+
             dataGridView1.DataSource = members.OrderByDescending(m => m.CreatedAt).ToList();
             dataGridView1.Columns["Id"].HeaderText = "TC Kimlik Numarası";
             dataGridView1.Columns["Id"].DisplayIndex = 0;
@@ -52,6 +73,7 @@ namespace Dernek.PL
             dataGridView1.Columns["IsActive"].Visible = false;
             dataGridView1.Columns["CreatedAt"].HeaderText = "Oluşturulma Tarihi";
             dataGridView1.Columns["CreatedAt"].DisplayIndex = 7;
+            dataGridView1.Columns["Payments"].Visible = false;
 
         }
 
@@ -79,6 +101,14 @@ namespace Dernek.PL
             }
         }
 
+        private void ClearFilters()
+        {
+            bloodTypeFilter.SelectedIndex = 0;
+            isActiveFilter.SelectedIndex = 0;
+            cityFilter.SelectedIndex = 0;
+
+        }
+
         private void Members_Load(object sender, EventArgs e)
         {
             DataGridViewTextBoxColumn uyelikDurumuKolonu = new DataGridViewTextBoxColumn
@@ -89,8 +119,24 @@ namespace Dernek.PL
             };
             dataGridView1.Columns.Add(uyelikDurumuKolonu);
 
+
+            var cityFilterItems = Enum.GetNames(typeof(City)).ToList();
+            var bloodTypeFilterItems = Enum.GetNames(typeof(BloodType)).ToList();
+            cityFilterItems.Insert(0, "Tüm Şehirler");
+            bloodTypeFilterItems.Insert(0, "Tüm Kan Grupları");
+
             cityInput.DataSource = Enum.GetValues(typeof(City));
+            cityFilter.DataSource = cityFilterItems;
+
             bloodTypeInput.DataSource = Enum.GetValues(typeof(BloodType));
+            bloodTypeFilter.DataSource = bloodTypeFilterItems;
+
+            isActiveFilter.Items.Add("Tüm Üyeler");
+            isActiveFilter.Items.Add("Aktif Üye");
+            isActiveFilter.Items.Add("Pasif Üye");
+            ClearFilters();
+
+
             dataGridView1.ReadOnly = true;
             addButton.Visible = false;
             updateButton.Visible = false;
@@ -99,6 +145,8 @@ namespace Dernek.PL
             formSubTitleLabel.Visible = false;
             ToggleInputs(false);
             LoadData();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -282,6 +330,16 @@ namespace Dernek.PL
                     LoadData();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClearFilters();
+        }
+
+        private void Filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

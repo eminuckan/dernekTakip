@@ -59,24 +59,28 @@
             flowLayoutPanel1.Controls.Add(panel5);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Margin = new Padding(7, 8, 7, 8);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(202, 618);
+            flowLayoutPanel1.Size = new Size(491, 1689);
             flowLayoutPanel1.TabIndex = 2;
             // 
             // panel2
             // 
             panel2.Controls.Add(pictureBox1);
-            panel2.Location = new Point(3, 3);
+            panel2.Location = new Point(7, 8);
+            panel2.Margin = new Padding(7, 8, 7, 8);
             panel2.Name = "panel2";
-            panel2.Size = new Size(197, 135);
+            panel2.Size = new Size(478, 369);
             panel2.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(3, 29);
+            pictureBox1.Location = new Point(7, 79);
+            pictureBox1.Margin = new Padding(7, 8, 7, 8);
+            pictureBox1.MinimumSize = new Size(464, 202);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(191, 74);
+            pictureBox1.Size = new Size(464, 202);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -84,9 +88,10 @@
             // panel1
             // 
             panel1.Controls.Add(home);
-            panel1.Location = new Point(3, 144);
+            panel1.Location = new Point(7, 393);
+            panel1.Margin = new Padding(7, 8, 7, 8);
             panel1.Name = "panel1";
-            panel1.Size = new Size(197, 44);
+            panel1.Size = new Size(478, 120);
             panel1.TabIndex = 1;
             // 
             // home
@@ -98,11 +103,12 @@
             home.FlatAppearance.MouseDownBackColor = Color.FromArgb(5, 32, 63);
             home.FlatAppearance.MouseOverBackColor = Color.FromArgb(5, 32, 63);
             home.FlatStyle = FlatStyle.Flat;
-            home.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            home.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             home.ForeColor = Color.Transparent;
-            home.Location = new Point(3, 3);
+            home.Location = new Point(7, 8);
+            home.Margin = new Padding(7, 8, 7, 8);
             home.Name = "home";
-            home.Size = new Size(191, 38);
+            home.Size = new Size(464, 104);
             home.TabIndex = 0;
             home.Text = "Ana Sayfa";
             home.UseVisualStyleBackColor = false;
@@ -111,9 +117,10 @@
             // panel3
             // 
             panel3.Controls.Add(members);
-            panel3.Location = new Point(3, 194);
+            panel3.Location = new Point(7, 529);
+            panel3.Margin = new Padding(7, 8, 7, 8);
             panel3.Name = "panel3";
-            panel3.Size = new Size(197, 44);
+            panel3.Size = new Size(478, 120);
             panel3.TabIndex = 2;
             // 
             // members
@@ -125,21 +132,24 @@
             members.FlatAppearance.MouseDownBackColor = Color.FromArgb(5, 32, 63);
             members.FlatAppearance.MouseOverBackColor = Color.FromArgb(5, 32, 63);
             members.FlatStyle = FlatStyle.Flat;
-            members.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            members.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             members.ForeColor = Color.Transparent;
-            members.Location = new Point(3, 3);
+            members.Location = new Point(7, 8);
+            members.Margin = new Padding(7, 8, 7, 8);
             members.Name = "members";
-            members.Size = new Size(191, 38);
+            members.Size = new Size(464, 104);
             members.TabIndex = 0;
             members.Text = "Üye İşlemleri";
             members.UseVisualStyleBackColor = false;
+            members.Click += members_Click;
             // 
             // panel4
             // 
             panel4.Controls.Add(dues);
-            panel4.Location = new Point(3, 244);
+            panel4.Location = new Point(7, 665);
+            panel4.Margin = new Padding(7, 8, 7, 8);
             panel4.Name = "panel4";
-            panel4.Size = new Size(197, 44);
+            panel4.Size = new Size(478, 120);
             panel4.TabIndex = 3;
             // 
             // dues
@@ -151,11 +161,12 @@
             dues.FlatAppearance.MouseDownBackColor = Color.FromArgb(5, 32, 63);
             dues.FlatAppearance.MouseOverBackColor = Color.FromArgb(5, 32, 63);
             dues.FlatStyle = FlatStyle.Flat;
-            dues.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dues.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             dues.ForeColor = Color.Transparent;
-            dues.Location = new Point(3, 3);
+            dues.Location = new Point(7, 8);
+            dues.Margin = new Padding(7, 8, 7, 8);
             dues.Name = "dues";
-            dues.Size = new Size(191, 38);
+            dues.Size = new Size(464, 104);
             dues.TabIndex = 0;
             dues.Text = "Aidat İşlemleri";
             dues.UseVisualStyleBackColor = false;
@@ -163,9 +174,10 @@
             // panel5
             // 
             panel5.Controls.Add(reports);
-            panel5.Location = new Point(3, 294);
+            panel5.Location = new Point(7, 801);
+            panel5.Margin = new Padding(7, 8, 7, 8);
             panel5.Name = "panel5";
-            panel5.Size = new Size(197, 44);
+            panel5.Size = new Size(478, 120);
             panel5.TabIndex = 4;
             // 
             // reports
@@ -177,11 +189,12 @@
             reports.FlatAppearance.MouseDownBackColor = Color.FromArgb(5, 32, 63);
             reports.FlatAppearance.MouseOverBackColor = Color.FromArgb(5, 32, 63);
             reports.FlatStyle = FlatStyle.Flat;
-            reports.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            reports.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             reports.ForeColor = Color.Transparent;
-            reports.Location = new Point(3, 3);
+            reports.Location = new Point(7, 8);
+            reports.Margin = new Padding(7, 8, 7, 8);
             reports.Name = "reports";
-            reports.Size = new Size(191, 38);
+            reports.Size = new Size(464, 104);
             reports.TabIndex = 0;
             reports.Text = "Raporlar";
             reports.UseVisualStyleBackColor = false;
@@ -189,19 +202,21 @@
             // container
             // 
             container.Dock = DockStyle.Fill;
-            container.Location = new Point(202, 0);
+            container.Location = new Point(491, 0);
+            container.Margin = new Padding(7, 8, 7, 8);
             container.Name = "container";
-            container.Size = new Size(1163, 618);
+            container.Size = new Size(2824, 1689);
             container.TabIndex = 3;
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1365, 618);
+            ClientSize = new Size(3315, 1689);
             Controls.Add(container);
             Controls.Add(flowLayoutPanel1);
+            Margin = new Padding(7, 8, 7, 8);
             Name = "Main";
             Text = "Dernek Takip";
             Load += Main_Load;

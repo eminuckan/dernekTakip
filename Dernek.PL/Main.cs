@@ -23,16 +23,30 @@ namespace Dernek.PL
             InitializeComponent();
         }
 
+        private void LoadHome()
+        {
+            container.Controls.Clear();
+            Home home = new(_memberReadRepository);
+            container.Controls.Add(home);
+        }
+
         private void Main_Load(object sender, EventArgs e)
         {
-            Members members = new(_memberWriteRepository, _memberReadRepository);
-            container.Controls.Add(members);
+            LoadHome();
         }
 
         private void home_Click(object sender, EventArgs e)
         {
+            LoadHome();
 
 
+        }
+
+        private void members_Click(object sender, EventArgs e)
+        {
+            container.Controls.Clear();
+            Members members = new(_memberWriteRepository, _memberReadRepository);
+            container.Controls.Add(members);
         }
     }
 }

@@ -21,5 +21,7 @@ namespace Dernek.Core.Entities
         [Required]
         [DefaultValue(false)]
         public bool IsActive { get; set; }
+
+        public ICollection<PaymentEntity> Payments { get; set; }
     }
 }
