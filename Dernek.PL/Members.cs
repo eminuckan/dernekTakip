@@ -2,21 +2,8 @@
 using Dernek.Core.Entities;
 using Dernek.Core.Enums;
 using Dernek.PL.Helper;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Net.Mail;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Dernek.PL
 {
@@ -114,7 +101,7 @@ namespace Dernek.PL
             DataGridViewTextBoxColumn uyelikDurumuKolonu = new DataGridViewTextBoxColumn
             {
                 Name = "uyelikDurumu",
-                HeaderText = "Üyelik Durumu Gösterim",
+                HeaderText = "Üyelik Durumu",
                 ReadOnly = true,
             };
             dataGridView1.Columns.Add(uyelikDurumuKolonu);
@@ -145,14 +132,13 @@ namespace Dernek.PL
             formSubTitleLabel.Visible = false;
             ToggleInputs(false);
             LoadData();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns[0].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns[0].Index && dataGridView1.Columns["IsActive"] != null)
             {
                 // "IsActive" kolonunun değerini kontrol edelim.
                 bool isActive = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells["IsActive"].Value);

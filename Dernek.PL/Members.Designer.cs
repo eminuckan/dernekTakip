@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             bloodTypeInput = new ComboBox();
             cityInput = new ComboBox();
@@ -74,16 +75,19 @@
             // dataGridView1
             // 
             dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            dataGridViewCellStyle1.BackColor = Color.LightGray;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.GridColor = SystemColors.Control;
             dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Margin = new Padding(7, 8, 7, 8);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 102;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1716, 890);
+            dataGridView1.Size = new Size(765, 326);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_SelectRow;
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
@@ -93,20 +97,18 @@
             // 
             bloodTypeInput.DropDownStyle = ComboBoxStyle.DropDownList;
             bloodTypeInput.FormattingEnabled = true;
-            bloodTypeInput.Location = new Point(282, 729);
-            bloodTypeInput.Margin = new Padding(7, 8, 7, 8);
+            bloodTypeInput.Location = new Point(116, 267);
             bloodTypeInput.Name = "bloodTypeInput";
-            bloodTypeInput.Size = new Size(385, 49);
+            bloodTypeInput.Size = new Size(161, 23);
             bloodTypeInput.TabIndex = 6;
             // 
             // cityInput
             // 
             cityInput.DropDownStyle = ComboBoxStyle.DropDownList;
             cityInput.FormattingEnabled = true;
-            cityInput.Location = new Point(282, 617);
-            cityInput.Margin = new Padding(7, 8, 7, 8);
+            cityInput.Location = new Point(116, 226);
             cityInput.Name = "cityInput";
-            cityInput.Size = new Size(385, 49);
+            cityInput.Size = new Size(161, 23);
             cityInput.TabIndex = 5;
             // 
             // isActive
@@ -114,115 +116,103 @@
             isActive.AutoSize = true;
             isActive.Checked = true;
             isActive.CheckState = CheckState.Checked;
-            isActive.Location = new Point(440, 842);
-            isActive.Margin = new Padding(7, 8, 7, 8);
+            isActive.Location = new Point(181, 308);
             isActive.Name = "isActive";
-            isActive.Size = new Size(231, 45);
+            isActive.Size = new Size(96, 19);
             isActive.TabIndex = 7;
             isActive.Text = "Üye Aktif Mi?";
             isActive.UseVisualStyleBackColor = true;
             // 
             // idInput
             // 
-            idInput.Location = new Point(282, 191);
-            idInput.Margin = new Padding(7, 8, 7, 8);
+            idInput.Location = new Point(116, 70);
             idInput.Mask = "00000000000";
             idInput.Name = "idInput";
-            idInput.Size = new Size(385, 47);
+            idInput.Size = new Size(161, 23);
             idInput.TabIndex = 3;
             idInput.ValidatingType = typeof(int);
             // 
             // bloodTypeLabel
             // 
             bloodTypeLabel.AutoSize = true;
-            bloodTypeLabel.Location = new Point(114, 738);
-            bloodTypeLabel.Margin = new Padding(7, 0, 7, 0);
+            bloodTypeLabel.Location = new Point(47, 270);
             bloodTypeLabel.Name = "bloodTypeLabel";
-            bloodTypeLabel.Size = new Size(158, 41);
+            bloodTypeLabel.Size = new Size(63, 15);
             bloodTypeLabel.TabIndex = 13;
             bloodTypeLabel.Text = "Kan Grubu";
             // 
             // mailInput
             // 
-            mailInput.Location = new Point(282, 500);
-            mailInput.Margin = new Padding(7, 8, 7, 8);
+            mailInput.Location = new Point(116, 183);
             mailInput.Name = "mailInput";
-            mailInput.Size = new Size(385, 47);
+            mailInput.Size = new Size(161, 23);
             mailInput.TabIndex = 4;
             // 
             // cityLabel
             // 
             cityLabel.AutoSize = true;
-            cityLabel.Location = new Point(187, 626);
-            cityLabel.Margin = new Padding(7, 0, 7, 0);
+            cityLabel.Location = new Point(77, 229);
             cityLabel.Name = "cityLabel";
-            cityLabel.Size = new Size(84, 41);
+            cityLabel.Size = new Size(33, 15);
             cityLabel.TabIndex = 14;
             cityLabel.Text = "Şehir";
             // 
             // mailLabel
             // 
             mailLabel.AutoSize = true;
-            mailLabel.Location = new Point(158, 508);
-            mailLabel.Margin = new Padding(7, 0, 7, 0);
+            mailLabel.Location = new Point(65, 186);
             mailLabel.Name = "mailLabel";
-            mailLabel.Size = new Size(113, 41);
+            mailLabel.Size = new Size(45, 15);
             mailLabel.TabIndex = 15;
             mailLabel.Text = "E Posta";
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new Point(172, 199);
-            idLabel.Margin = new Padding(7, 0, 7, 0);
+            idLabel.Location = new Point(71, 73);
             idLabel.Name = "idLabel";
-            idLabel.Size = new Size(100, 41);
+            idLabel.Size = new Size(39, 15);
             idLabel.TabIndex = 16;
             idLabel.Text = "TC No";
             // 
             // surnameLabel
             // 
             surnameLabel.AutoSize = true;
-            surnameLabel.Location = new Point(109, 410);
-            surnameLabel.Margin = new Padding(7, 0, 7, 0);
+            surnameLabel.Location = new Point(45, 150);
             surnameLabel.Name = "surnameLabel";
-            surnameLabel.Size = new Size(167, 41);
+            surnameLabel.Size = new Size(65, 15);
             surnameLabel.TabIndex = 17;
             surnameLabel.Text = "Üye Soyadı";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(151, 306);
-            nameLabel.Margin = new Padding(7, 0, 7, 0);
+            nameLabel.Location = new Point(62, 112);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(122, 41);
+            nameLabel.Size = new Size(48, 15);
             nameLabel.TabIndex = 18;
             nameLabel.Text = "Üye Adı";
             // 
             // surnameInput
             // 
-            surnameInput.Location = new Point(282, 401);
-            surnameInput.Margin = new Padding(7, 8, 7, 8);
+            surnameInput.Location = new Point(116, 147);
             surnameInput.Name = "surnameInput";
-            surnameInput.Size = new Size(385, 47);
+            surnameInput.Size = new Size(161, 23);
             surnameInput.TabIndex = 2;
             // 
             // nameInput
             // 
-            nameInput.Location = new Point(282, 298);
-            nameInput.Margin = new Padding(7, 8, 7, 8);
+            nameInput.Location = new Point(116, 109);
             nameInput.Name = "nameInput";
-            nameInput.Size = new Size(385, 47);
+            nameInput.Size = new Size(161, 23);
             nameInput.TabIndex = 1;
             // 
             // updateButton
             // 
             updateButton.AutoSize = true;
-            updateButton.Location = new Point(8, 8);
-            updateButton.Margin = new Padding(7, 8, 7, 8);
+            updateButton.Location = new Point(3, 3);
             updateButton.Name = "updateButton";
-            updateButton.Size = new Size(172, 139);
+            updateButton.Size = new Size(71, 51);
             updateButton.TabIndex = 9;
             updateButton.Text = "Güncelle";
             updateButton.UseVisualStyleBackColor = true;
@@ -231,10 +221,9 @@
             // deleteButton
             // 
             deleteButton.AutoSize = true;
-            deleteButton.Location = new Point(194, 8);
-            deleteButton.Margin = new Padding(7, 8, 7, 8);
+            deleteButton.Location = new Point(80, 3);
             deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(172, 139);
+            deleteButton.Size = new Size(71, 51);
             deleteButton.TabIndex = 8;
             deleteButton.Text = "Sil";
             deleteButton.UseVisualStyleBackColor = true;
@@ -243,10 +232,9 @@
             // addButton
             // 
             addButton.AutoSize = true;
-            addButton.Location = new Point(380, 8);
-            addButton.Margin = new Padding(7, 8, 7, 8);
+            addButton.Location = new Point(157, 3);
             addButton.Name = "addButton";
-            addButton.Size = new Size(172, 139);
+            addButton.Size = new Size(71, 51);
             addButton.TabIndex = 10;
             addButton.Text = "Ekle";
             addButton.UseVisualStyleBackColor = true;
@@ -259,30 +247,27 @@
             flowLayoutPanel1.Controls.Add(deleteButton);
             flowLayoutPanel1.Controls.Add(updateButton);
             flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel1.Location = new Point(108, 934);
-            flowLayoutPanel1.Margin = new Padding(7, 8, 7, 8);
+            flowLayoutPanel1.Location = new Point(44, 342);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(559, 155);
+            flowLayoutPanel1.Size = new Size(231, 57);
             flowLayoutPanel1.TabIndex = 19;
             // 
             // panel1
             // 
             panel1.AutoSize = true;
             panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(164, 199);
-            panel1.Margin = new Padding(7, 8, 7, 8);
+            panel1.Location = new Point(68, 73);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1716, 890);
+            panel1.Size = new Size(765, 326);
             panel1.TabIndex = 20;
             // 
             // cityFilter
             // 
             cityFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             cityFilter.FormattingEnabled = true;
-            cityFilter.Location = new Point(1262, 115);
-            cityFilter.Margin = new Padding(7, 8, 7, 8);
+            cityFilter.Location = new Point(578, 44);
             cityFilter.Name = "cityFilter";
-            cityFilter.Size = new Size(288, 49);
+            cityFilter.Size = new Size(121, 23);
             cityFilter.TabIndex = 25;
             cityFilter.SelectedIndexChanged += Filter_SelectedIndexChanged;
             // 
@@ -290,30 +275,27 @@
             // 
             bloodTypeFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             bloodTypeFilter.FormattingEnabled = true;
-            bloodTypeFilter.Location = new Point(954, 115);
-            bloodTypeFilter.Margin = new Padding(7, 8, 7, 8);
+            bloodTypeFilter.Location = new Point(451, 44);
             bloodTypeFilter.Name = "bloodTypeFilter";
-            bloodTypeFilter.Size = new Size(288, 49);
+            bloodTypeFilter.Size = new Size(121, 23);
             bloodTypeFilter.TabIndex = 25;
             bloodTypeFilter.SelectedIndexChanged += Filter_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(954, 66);
-            label1.Margin = new Padding(7, 0, 7, 0);
+            label1.Location = new Point(451, 26);
             label1.Name = "label1";
-            label1.Size = new Size(158, 41);
+            label1.Size = new Size(63, 15);
             label1.TabIndex = 26;
             label1.Text = "Kan Grubu";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1262, 66);
-            label2.Margin = new Padding(7, 0, 7, 0);
+            label2.Location = new Point(578, 26);
             label2.Name = "label2";
-            label2.Size = new Size(84, 41);
+            label2.Size = new Size(33, 15);
             label2.TabIndex = 26;
             label2.Text = "Şehir";
             // 
@@ -321,29 +303,26 @@
             // 
             isActiveFilter.DropDownStyle = ComboBoxStyle.DropDownList;
             isActiveFilter.FormattingEnabled = true;
-            isActiveFilter.Location = new Point(646, 115);
-            isActiveFilter.Margin = new Padding(7, 8, 7, 8);
+            isActiveFilter.Location = new Point(324, 44);
             isActiveFilter.Name = "isActiveFilter";
-            isActiveFilter.Size = new Size(288, 49);
+            isActiveFilter.Size = new Size(121, 23);
             isActiveFilter.TabIndex = 25;
             isActiveFilter.SelectedIndexChanged += Filter_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(646, 66);
-            label3.Margin = new Padding(7, 0, 7, 0);
+            label3.Location = new Point(324, 26);
             label3.Name = "label3";
-            label3.Size = new Size(215, 41);
+            label3.Size = new Size(86, 15);
             label3.TabIndex = 26;
             label3.Text = "Üyelik Durumu";
             // 
             // button1
             // 
-            button1.Location = new Point(1575, 115);
-            button1.Margin = new Padding(7, 8, 7, 8);
+            button1.Location = new Point(707, 44);
             button1.Name = "button1";
-            button1.Size = new Size(306, 49);
+            button1.Size = new Size(126, 23);
             button1.TabIndex = 27;
             button1.Text = "Filtreleri Sıfırla";
             button1.UseVisualStyleBackColor = true;
@@ -356,18 +335,18 @@
             panel2.Controls.Add(flowLayoutPanel2);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(2850, 250);
+            panel2.Size = new Size(1174, 91);
             panel2.TabIndex = 28;
             // 
             // formSubTitleLabel
             // 
             formSubTitleLabel.AutoSize = true;
             formSubTitleLabel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            formSubTitleLabel.Location = new Point(177, 197);
-            formSubTitleLabel.Margin = new Padding(7, 0, 7, 0);
+            formSubTitleLabel.Location = new Point(73, 72);
             formSubTitleLabel.Name = "formSubTitleLabel";
-            formSubTitleLabel.Size = new Size(440, 45);
+            formSubTitleLabel.Size = new Size(176, 17);
             formSubTitleLabel.TabIndex = 31;
             formSubTitleLabel.Text = "Lorem Ipsum Dolor Sit Amet";
             // 
@@ -375,10 +354,9 @@
             // 
             formTitleLabel.AutoSize = true;
             formTitleLabel.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            formTitleLabel.Location = new Point(172, 74);
-            formTitleLabel.Margin = new Padding(7, 0, 7, 0);
+            formTitleLabel.Location = new Point(71, 27);
             formTitleLabel.Name = "formTitleLabel";
-            formTitleLabel.Size = new Size(484, 98);
+            formTitleLabel.Size = new Size(195, 40);
             formTitleLabel.TabIndex = 29;
             formTitleLabel.Text = "Üye İşlemleri";
             // 
@@ -387,19 +365,17 @@
             flowLayoutPanel2.Controls.Add(addMemberButton);
             flowLayoutPanel2.Controls.Add(updateMemberButton);
             flowLayoutPanel2.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel2.Location = new Point(1999, 58);
-            flowLayoutPanel2.Margin = new Padding(7, 8, 7, 8);
+            flowLayoutPanel2.Location = new Point(823, 21);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(716, 126);
+            flowLayoutPanel2.Size = new Size(295, 46);
             flowLayoutPanel2.TabIndex = 30;
             // 
             // addMemberButton
             // 
             addMemberButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            addMemberButton.Location = new Point(367, 8);
-            addMemberButton.Margin = new Padding(7, 8, 7, 8);
+            addMemberButton.Location = new Point(151, 3);
             addMemberButton.Name = "addMemberButton";
-            addMemberButton.Size = new Size(342, 109);
+            addMemberButton.Size = new Size(141, 40);
             addMemberButton.TabIndex = 23;
             addMemberButton.Text = "Üye Ekle";
             addMemberButton.UseVisualStyleBackColor = true;
@@ -408,10 +384,9 @@
             // updateMemberButton
             // 
             updateMemberButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            updateMemberButton.Location = new Point(11, 8);
-            updateMemberButton.Margin = new Padding(7, 8, 7, 8);
+            updateMemberButton.Location = new Point(4, 3);
             updateMemberButton.Name = "updateMemberButton";
-            updateMemberButton.Size = new Size(342, 109);
+            updateMemberButton.Size = new Size(141, 40);
             updateMemberButton.TabIndex = 22;
             updateMemberButton.Text = "Üye Düzenle / Sil";
             updateMemberButton.UseVisualStyleBackColor = true;
@@ -434,9 +409,10 @@
             panel3.Controls.Add(bloodTypeInput);
             panel3.Controls.Add(cityInput);
             panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 250);
+            panel3.Location = new Point(0, 91);
+            panel3.Margin = new Padding(1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(828, 1250);
+            panel3.Size = new Size(282, 439);
             panel3.TabIndex = 29;
             // 
             // panel4
@@ -450,21 +426,21 @@
             panel4.Controls.Add(label1);
             panel4.Controls.Add(cityFilter);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(828, 250);
+            panel4.Location = new Point(282, 91);
+            panel4.Margin = new Padding(1);
             panel4.Name = "panel4";
-            panel4.Size = new Size(2022, 1250);
+            panel4.Size = new Size(892, 439);
             panel4.TabIndex = 30;
             // 
             // Members
             // 
-            AutoScaleDimensions = new SizeF(17F, 41F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
-            Margin = new Padding(7, 8, 7, 8);
             Name = "Members";
-            Size = new Size(2850, 1500);
+            Size = new Size(1174, 530);
             Load += Members_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);

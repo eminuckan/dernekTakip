@@ -31,7 +31,7 @@ namespace Dernek.PL
             string[] cityNames = Array.ConvertAll(memberCities, c => Enum.GetName(typeof(City), c));
             cityNames = cityNames.Distinct().ToArray();
 
-            Dictionary<string, double> cityMemberCounts = new Dictionary<string, double>();
+            Dictionary<string, double> cityMemberCounts = new();
             foreach (string cityName in cityNames)
             {
                 int count = members.Count(m => Enum.GetName(typeof(City), m.City) == cityName);

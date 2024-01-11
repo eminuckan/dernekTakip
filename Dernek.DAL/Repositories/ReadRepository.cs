@@ -15,7 +15,7 @@ namespace Dernek.DAL.Repositories
         }
         public DbSet<T> Table => _context.Set<T>();
 
-        public IQueryable<T> GetAll(bool tracking = true )
+        public virtual IQueryable<T> GetAll(bool tracking = true )
         {
             var query = Table.AsQueryable();
             if ( !tracking )
